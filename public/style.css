@@ -1,13 +1,27 @@
 body {
   margin: 0 auto;
   padding: 0;
-  box-sizing: border-box;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.fotolip.com%2Fwp-content%2Fuploads%2F2016%2F05%2FPowerpoint-Template-6.jpg&f=1&nofb=1&ipt=9ed2e358e39b4a03f53dfbffdcd3eface3c1930c4db28d4b3a927360c57902d1");
 }
 
 #header {
   text-align: center;
-  margin-top: 1rem;
-  padding: 1rem;
+}
+
+#container {
+  width: 100%;
+  padding: 0 5rem;
+}
+
+#input_todo_list {
+  width: 100%;
 }
 
 form {
@@ -19,15 +33,10 @@ form {
   align-items: center;
 }
 
-#input_todo_list {
-  width: 50%;
-}
-
 #listing-container {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  width: 55%;
   margin-left: auto;
   padding: 0px;
   margin-right: auto;
@@ -48,37 +57,24 @@ form {
   align-items: center;
 }
 
-#error {
+.hide{
   display: none;
-  justify-content: center;
-  text-align: center;
-  width: 55%;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0.3rem;
+}
+
+#form-section-btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .checked {
-    text-decoration: line-through;
-  }
+  text-decoration: line-through;
+}
 
 @media only screen and (max-width: 720px) {
-  #listing-container {
+  #container {
     width: 100%;
-    padding: 1rem;
-  }
-
-  form {
-    padding: 1rem;
-  }
-
-  #listing-container li {
-    padding-top: 0;
-    padding-bottom: 0;
-    margin: 0px;
-  }
-
-  #input_todo_list {
-    width: 100%;
+    padding: 0 1rem;
   }
 }

@@ -37,14 +37,6 @@
           </button>
         </div>
       </form>
-      <div
-        class="alert alert-danger"
-        role="alert"
-        id="error"
-        style="display: none"
-      >
-        Input field cannot be empty !!
-      </div>
       <div id="listing-container">
         <% if(list.length) {%>
         <h5>Current Ongoing Task</h5>
@@ -56,7 +48,25 @@
             <input type="checkbox" onchange="toggleStrikeThrough(this)" />
             <span id="list-delete">
               <span id="todo-text"><%= list[i] %></span>
-              <span>
+              <span id="form-section-btn">
+                <form action="/editTodo" method="post">
+                  <input type="hidden" name="todo_id" value="<%= i%>" />
+                  <input
+                    type="text"
+                    name="todo_id"
+                    id="edit_input"
+                    placeholder="Enter Updated Notes..."
+                  />
+                  <button
+                    type="button"
+                    class="btn btn-success"                    
+                  >
+                    <i class="bi bi-check-circle-fill"></i>
+                  </button>
+                </form>
+                <button class="btn btn-light" onclick="handleEditToogle(event,'<%= i%>')">
+                  <i class="bi bi-pencil-square"></i>
+                </button>
                 <form action="/delete" method="post">
                   <input type="hidden" name="todo_id" value="<%= i%>" />
                   <button class="btn btn-danger" type="submit">
