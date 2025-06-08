@@ -1,0 +1,84 @@
+body {
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#header {
+  text-align: center;
+  margin-top: 1rem;
+  padding: 1rem;
+}
+
+form {
+  display: flex;
+  width: 100%;
+  gap: 1rem;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+}
+
+#input_todo_list {
+  width: 50%;
+}
+
+#listing-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 55%;
+  margin-left: auto;
+  padding: 0px;
+  margin-right: auto;
+}
+
+#listing-container li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+
+#list-delete {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+}
+
+#error {
+  display: none;
+  justify-content: center;
+  text-align: center;
+  width: 55%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0.3rem;
+}
+
+.checked {
+    text-decoration: line-through;
+  }
+
+@media only screen and (max-width: 720px) {
+  #listing-container {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  form {
+    padding: 1rem;
+  }
+
+  #listing-container li {
+    padding-top: 0;
+    padding-bottom: 0;
+    margin: 0px;
+  }
+
+  #input_todo_list {
+    width: 100%;
+  }
+}
