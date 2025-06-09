@@ -32,6 +32,13 @@
           />
         </div>
         <div class="form-group">
+          <select name="priority" class="form-control">
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+          </select>
+        </div>
+        <div class="form-group">
           <button type="submit" class="btn btn-primary" id="add_btn">
             Add
           </button>
@@ -46,28 +53,63 @@
           <li class="list-group-item">
             <input type="checkbox" onchange="toggleStrikeThrough(this)" />
             <span id="list-delete">
-              <span id="todo-text"><%= list[i] %></span>
+              <span id="todo-text"><%= list[i].title %></span>
+              <% if(list[i].priority == 'low') {%>
+              <span class="alert alert-success" role="alert">
+                <%= list[i].priority %>
+              </span>
+              <%} else if(list[i].priority == 'medium'){%>
+              <span class="alert alert-info" role="alert">
+                <%= list[i].priority %>
+              </span>
+              <%} else{%>
+              <span class="alert alert-danger" role="alert">
+                <%= list[i].priority %>
+              </span>
+              <%}%>
               <span id="form-section-btn">
-                <form action="/editTodo" method="post" class="hide" id="edit_form">
-                  <input type="hidden" name="todo_id" value="<%= i%>" />
+                <form
+                  action="/editTodo"
+                  method="post"
+                  class="hide"
+                  id="edit_form"
+                >
+                  <input
+                    type="hidden"
+                    name="todo_id"
+                    value="<%= list[i].id%>"
+                  />
                   <input
                     type="text"
                     name="edit_input"
                     id="edit_input"
                     placeholder="Enter Updated Notes..."
                   />
-                  <button
-                    type="submit"
-                    class="btn btn-success"                    
+                  <select
+                    name="priority"
+                    class="form-control"
+                    defaultValue="<%= list[i].priority %>"
                   >
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                  </select>
+                  <button type="submit" class="btn btn-success">
                     <i class="bi bi-check-circle-fill"></i>
                   </button>
                 </form>
-                <button class="btn btn-light" onclick="handleEditToogle(event,'<%= i%>')">
+                <button
+                  class="btn btn-light"
+                  onclick="handleEditToogle(event,'<%= i%>')"
+                >
                   <i class="bi bi-pencil-square"></i>
                 </button>
                 <form action="/delete" method="post">
-                  <input type="hidden" name="todo_id" value="<%= i%>" />
+                  <input
+                    type="hidden"
+                    name="todo_id"
+                    value="<%= list[i].id%>"
+                  />
                   <button class="btn btn-danger" type="submit">
                     <i class="bi bi-trash"></i>
                   </button>
