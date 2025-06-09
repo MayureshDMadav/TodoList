@@ -22,6 +22,13 @@ app.post("/", (req, res) => {
   }
 });
 
+app.post("/editTodo", (req, res) => {
+  const todoid = req.body["todo_id"];
+  const updatedText = req.body["edit_input"];
+  todoListArray[todoid] = updatedText;
+  res.redirect("/");
+});
+
 app.post("/delete", (req, res) => {
   const dataToDelete = req.body["todo_id"];
   todoListArray.splice(dataToDelete, 1);

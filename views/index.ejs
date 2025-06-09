@@ -43,22 +43,21 @@
         <% } %>
         <ul class="list-group">
           <% for(var i=0; i < list.length; i++) {%>
-
           <li class="list-group-item">
             <input type="checkbox" onchange="toggleStrikeThrough(this)" />
             <span id="list-delete">
               <span id="todo-text"><%= list[i] %></span>
               <span id="form-section-btn">
-                <form action="/editTodo" method="post">
+                <form action="/editTodo" method="post" class="hide" id="edit_form">
                   <input type="hidden" name="todo_id" value="<%= i%>" />
                   <input
                     type="text"
-                    name="todo_id"
+                    name="edit_input"
                     id="edit_input"
                     placeholder="Enter Updated Notes..."
                   />
                   <button
-                    type="button"
+                    type="submit"
                     class="btn btn-success"                    
                   >
                     <i class="bi bi-check-circle-fill"></i>

@@ -9,10 +9,12 @@ function toggleStrikeThrough(checkbox) {
 
 const handleEditToogle = (event, i) => {
   event.preventDefault();
-  const listOfTodo = document.querySelectorAll("li #todo-text");
+  const listOfTodo = document.querySelectorAll("li #edit_form");
+  listOfTodo.forEach((list) => {
+    list.classList.add("hide");
+  });
   const targetedTodoList = listOfTodo[i];
-  console.log(targetedTodoList)
   if (targetedTodoList) {
-    targetedTodoList.classList.add("hide");
+    targetedTodoList.classList.remove("hide");
   }
 };
