@@ -57,7 +57,14 @@ form {
   align-items: center;
 }
 
-.hide{
+#alert-tag {
+  padding: 0.2rem;
+  margin: 0;
+  text-transform: capitalize;
+  margin-left: 0.5rem;
+}
+
+.hide {
   display: none;
 }
 
@@ -76,5 +83,32 @@ form {
   #container {
     width: 100%;
     padding: 0 1rem;
+  }
+
+  #edit_form {
+    position: absolute;
+    text-align: center;
+    left: 0%;
+    top: 11%;
+    height: 3rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background: linear-gradient(45deg, #a19a9a, transparent);
+  }
+
+  #mobile_form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 0;
+    align-items: normal;
+    justify-content: center;
+  }
+
+  #mobile_form #add_btn {
+    display: flex;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
   }
 }
