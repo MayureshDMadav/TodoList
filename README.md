@@ -30,6 +30,7 @@ A simple yet functional To-Do List web application built using **Node.js**, **Ex
 
 ## 📂 Folder Structure
 
+```
 todolist/
 ├── models/
 │ └── connect.js 
@@ -40,8 +41,7 @@ todolist/
 | └── script.js 
 ├── server.js # Express routing
 ├── package.json # Project dependencies
-
-
+```
 ---
 
 ## ⚙️ Installation
